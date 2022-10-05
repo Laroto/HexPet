@@ -3,7 +3,7 @@ project(hexpet)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  #std_msgs
+  std_msgs
   sensor_msgs
 )
 
@@ -41,7 +41,7 @@ catkin_package(
   CATKIN_DEPENDS 
   roscpp 
   sensor_msgs
-  #std_msgs
+  std_msgs
 )
 
 ###########
@@ -64,7 +64,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(teste_joints src/teste_joints.cpp)
-#add_executable(publisher_node src/pub_node.cpp)
+add_executable(single_joint src/single_joint.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -75,7 +75,7 @@ add_executable(teste_joints src/teste_joints.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(teste_joints ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-#add_dependencies(publisher_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(single_joint ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 
@@ -83,9 +83,9 @@ add_dependencies(teste_joints ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPOR
 target_link_libraries(teste_joints
   ${catkin_LIBRARIES}
 )
-# target_link_libraries(publisher_node
-# ${catkin_LIBRARIES}
-# )
+target_link_libraries(single_joint
+${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
