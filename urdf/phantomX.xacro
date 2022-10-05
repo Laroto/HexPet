@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<robot xmlns:xacro="http://wwww.ros.org/wiki/xacro" name="HexPet">
+<robot xmlns:xacro="http://wwww.ros.org/wiki/xacro" name="hexpet">
 
     <!-- parameters -->
     <xacro:property name="pi" value="3.1415926535897931"/>
@@ -12,7 +12,7 @@
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/HexPet</robotNamespace>
+            <robotNamespace>/hexpet</robotNamespace>
         </plugin>
     </gazebo>
 
@@ -35,22 +35,26 @@
                 <color rgba="0.7 0.7 0.7 1"/>
             </material>
         </collision>
-        <inertial>
+        <!-- <inertial>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <mass value="0.00001"/>
             <inertia
                 ixx="1.0" ixy="0.0"  ixz="0.0"
                 iyy="1.0" iyz="0.0"
                 izz="1.0" />
-        </inertial>
+        </inertial> -->
     </link>
     <gazebo reference="body_link">
         <material>Gazebo/DarkGrey</material>
     </gazebo>
 
     <!-- Joint properties -->
-	<xacro:property name="joint_lower_limit" value="-${3.14}" />
-	<xacro:property name="joint_upper_limit" value="${3.14}" />
+	<!-- <xacro:property name="joint_lower_limit" value="-${3.14}" />
+	<xacro:property name="joint_upper_limit" value="${3.14}" /> -->
+
+    <xacro:property name="joint_lower_limit" value="-${1.57}" />
+	<xacro:property name="joint_upper_limit" value="${1.57}" />
+
 	<xacro:property name="joint_effort" value="6.0" />
 	<xacro:property name="joint_velocity" value="0.524" />
 
@@ -228,11 +232,11 @@
 	</xacro:macro>
 
 <!-- Build robot model -->
-	<xacro:leg side="R" position="R" x="-0.120" y="-0.060" angle="-${pi*3/4}" axis="1" />
+	<xacro:leg side="R" position="B" x="-0.120" y="-0.060" angle="-${pi*3/4}" axis="1" />
 	<xacro:leg side="R" position="M" x="0.0" y="-0.100" angle="-${pi/2}" axis="1" />
 	<xacro:leg side="R" position="F" x="0.120" y="-0.060" angle="-${pi/4}" axis="1" />
 
-	<xacro:leg side="L" position="R" x="-0.120" y="0.060" angle="${pi*3/4}" axis="-1" />
+	<xacro:leg side="L" position="B" x="-0.120" y="0.060" angle="${pi*3/4}" axis="-1" />
 	<xacro:leg side="L" position="M" x="0.0" y="0.100" angle="${pi/2}" axis="-1" />
 	<xacro:leg side="L" position="F" x="0.120" y="0.060" angle="${pi/4}" axis="-1" />
 

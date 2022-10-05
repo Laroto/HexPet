@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- Load joint controller configuration file -->
+    <rosparam file="$(find hexpet)/config/phantomX_control.yaml" command="load"/>
+
+    <!-- Load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/hexpet"
+        args="
+        coxa_joint_LB_position_controller
+        coxa_joint_RB_position_controller
+        coxa_joint_LM_position_controller
+        coxa_joint_RM_position_controller
+        coxa_joint_LF_position_controller
+        coxa_joint_RF_position_controller
+        femur_joint_LB_position_controller
+        femur_joint_RB_position_controller
+        femur_joint_LM_position_controller
+        femur_joint_RM_position_controller
+        femur_joint_LF_position_controller
+        femur_joint_RF_position_controller
+        tibia_joint_LB_position_controller
+        tibia_joint_RB_position_controller
+        tibia_joint_LM_position_controller
+        tibia_joint_RM_position_controller
+        tibia_joint_LF_position_controller
+        tibia_joint_RF_position_controller
+        joint_state_controller"
+    />
+
+    <!-- Convert joint states to TF transforms -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/hexpet/joint_states"/>
+    </node>
+    
+    <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+        <param name="use_gui" value="True"/>  -->
+
+</launch>
