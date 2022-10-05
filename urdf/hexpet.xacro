@@ -51,8 +51,8 @@
     <!-- Joint properties -->
 	<xacro:property name="joint_lower_limit" value="-${1.57}" />
 	<xacro:property name="joint_upper_limit" value="${1.57}" />
-	<xacro:property name="joint_effort" value="6.0" />
-	<xacro:property name="joint_velocity" value="0.524" />
+	<xacro:property name="joint_effort" value="1.667" />
+	<xacro:property name="joint_velocity" value="5.24" />
 
 	<!-- Leg macro -->
 	<xacro:macro name="leg" params="side position x y angle axis">
@@ -67,11 +67,11 @@
 		<link name="leg_center_${side}${position}" >
             <inertial>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-                <mass value="1.0"/>
+                <mass value="0.1"/>
                 <inertia
-                    ixx="0.2" ixy="0.0"  ixz="0.0"
-                    iyy="0.2" iyz="0.0"
-                    izz="0.2" />
+                    ixx="0.0002" ixy="0.0"  ixz="0.0"
+                    iyy="0.0002" iyz="0.0"
+                    izz="0.0002" />
             </inertial>
         </link>
 
@@ -116,9 +116,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.1"/>
                 <inertia
-                    ixx="0.01" ixy="0.0"  ixz="0.0"
-                    iyy="0.01" iyz="0.0"
-                    izz="0.01" />
+                    ixx="0.0001" ixy="0.0"  ixz="0.0"
+                    iyy="0.0001" iyz="0.0"
+                    izz="0.0001" />
             </inertial>
         </link>
         <gazebo reference="coxa_${side}${position}">
@@ -166,9 +166,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.1"/>
                 <inertia
-                    ixx="0.01" ixy="0.0"  ixz="0.0"
-                    iyy="0.01" iyz="0.0"
-                    izz="0.01" />
+                    ixx="0.0001" ixy="0.0"  ixz="0.0"
+                    iyy="0.0001" iyz="0.0"
+                    izz="0.0001" />
             </inertial>
         </link>
         <gazebo reference="femur_${side}${position}">
@@ -216,9 +216,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.1"/>
                 <inertia
-                    ixx="0.01" ixy="0.0"  ixz="0.0"
-                    iyy="0.01" iyz="0.0"
-                    izz="0.01" />
+                    ixx="0.0001" ixy="0.0"  ixz="0.0"
+                    iyy="0.0001" iyz="0.0"
+                    izz="0.0001" />
             </inertial>
         </link>
         <gazebo reference="tibia_${side}${position}">
