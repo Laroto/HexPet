@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 
     bool flag = true;
 
-    ros::Rate loop_rate(1);
+    ros::Rate loop_rate(0.33);
     while (ros::ok())
     {
         if (flag == true)

@@ -29,7 +29,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="${body_length_x} ${body_length_y} 0.1"/> 
+                <box size="${body_length_x} ${body_length_y} 0.025"/> 
             </geometry>
             <material name="">
                 <color rgba="0.7 0.7 0.7 1"/>
@@ -67,7 +67,7 @@
 		<link name="leg_center_${side}${position}" >
             <inertial>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-                <mass value="0.00001"/>
+                <mass value="1.0"/>
                 <inertia
                     ixx="0.2" ixy="0.0"  ixz="0.0"
                     iyy="0.2" iyz="0.0"
@@ -114,7 +114,7 @@
             </collision>
             <inertial>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-                <mass value="0.00001"/>
+                <mass value="0.1"/>
                 <inertia
                     ixx="0.01" ixy="0.0"  ixz="0.0"
                     iyy="0.01" iyz="0.0"
@@ -164,7 +164,7 @@
             </collision>
             <inertial>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-                <mass value="0.00001"/>
+                <mass value="0.1"/>
                 <inertia
                     ixx="0.01" ixy="0.0"  ixz="0.0"
                     iyy="0.01" iyz="0.0"
@@ -204,9 +204,9 @@
                 </material>
             </visual>
             <collision>
-                <origin xyz="${tibia_length/2} 0.0 0.0" rpy="${pi/2} 0.0 ${pi/2}" />
+                <origin xyz="${tibia_length/2} 0.025 0.0" rpy="${pi/2} 0.0 ${pi/2}" />
                 <geometry>
-                    <cylinder radius="0.025" length="${tibia_length}"/>
+                    <cylinder radius="0.001" length="${tibia_length}"/>
                 </geometry>
                 <material name="">
                     <color rgba="0.7 0.7 0.7 1" />
@@ -214,7 +214,7 @@
             </collision>
             <inertial>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-                <mass value="0.00001"/>
+                <mass value="0.1"/>
                 <inertia
                     ixx="0.01" ixy="0.0"  ixz="0.0"
                     iyy="0.01" iyz="0.0"
