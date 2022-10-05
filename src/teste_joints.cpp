@@ -37,13 +37,13 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     ros::Publisher pub;
 
-    pub = nh.advertise<sensor_msgs::JointState>("/hexpet/joint_states", 1);
+    pub = nh.advertise<sensor_msgs::JointState>("joint_states", 1);
 
     sensor_msgs::JointState msg = init_msg();
 
     bool flag = true;
 
-    ros::Rate loop_rate(1);
+    ros::Rate loop_rate(0.2);
     while (ros::ok())
     {
         msg.position.clear();

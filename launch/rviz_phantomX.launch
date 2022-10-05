@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find hexpet)/urdf/phantomX.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find hexpet)/urdf/hexpet.xacro'" />
 
     <!-- Send fake joint values -->
     <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
         <param name="use_gui" value="True"/> 
 
@@ -11,5 +12,6 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
         
     <!-- Show in rviz -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hexpet)/rviz/basic.rviz" /> 
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hexpet)/rviz/debug.rviz" /> 
+
 </launch>

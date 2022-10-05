@@ -20,7 +20,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="${body_length_x} ${body_length_y} 0.1"/> 
+                <mesh filename="package://hexpet/meshes/phantomX/body.stl" scale="0.001 0.001 0.001"/> 
             </geometry>
             <material name="">
                 <color rgba="0.7 0.7 0.7 1"/>
@@ -69,9 +69,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.00001"/>
                 <inertia
-                    ixx="1.0" ixy="0.0"  ixz="0.0"
-                    iyy="1.0" iyz="0.0"
-                    izz="1.0" />
+                    ixx="0.2" ixy="0.0"  ixz="0.0"
+                    iyy="0.2" iyz="0.0"
+                    izz="0.2" />
             </inertial>
         </link>
 
@@ -95,9 +95,9 @@
         </transmission>
         <link name="coxa_${side}${position}">
             <visual>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <cylinder radius="0.020" length="${coxa_length}"/>
+                    <mesh filename="package://hexpet/meshes/phantomX/coxa.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="">
                     <color rgba="0.7 0.7 0.7 1"/>
@@ -116,9 +116,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.00001"/>
                 <inertia
-                    ixx="1.0" ixy="0.0"  ixz="0.0"
-                    iyy="1.0" iyz="0.0"
-                    izz="1.0" />
+                    ixx="0.01" ixy="0.0"  ixz="0.0"
+                    iyy="0.01" iyz="0.0"
+                    izz="0.01" />
             </inertial>
         </link>
         <gazebo reference="coxa_${side}${position}">
@@ -145,9 +145,9 @@
         </transmission>
         <link name="femur_${side}${position}">
             <visual>
-                <origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0"/>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <cylinder radius="0.025" length="${femur_length}"/>
+                    <mesh filename="package://hexpet/meshes/phantomX/femur.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="">
                     <color rgba="0.7 0.7 0.7 1"/>
@@ -166,9 +166,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.00001"/>
                 <inertia
-                    ixx="1.0" ixy="0.0"  ixz="0.0"
-                    iyy="1.0" iyz="0.0"
-                    izz="1.0" />
+                    ixx="0.01" ixy="0.0"  ixz="0.0"
+                    iyy="0.01" iyz="0.0"
+                    izz="0.01" />
             </inertial>
         </link>
         <gazebo reference="femur_${side}${position}">
@@ -195,9 +195,9 @@
         </transmission>
         <link name="tibia_${side}${position}">
             <visual>
-                <origin xyz="${tibia_length/2} 0.0 0.0" rpy="${pi/2} 0.0 ${pi/2}"/>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <cylinder radius="0.025" length="${tibia_length}"/>
+                    <mesh filename="package://hexpet/meshes/phantomX/tibia.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="">
                     <color rgba="0.7 0.7 0.7 1"/>
@@ -216,9 +216,9 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <mass value="0.00001"/>
                 <inertia
-                    ixx="1.0" ixy="0.0"  ixz="0.0"
-                    iyy="1.0" iyz="0.0"
-                    izz="1.0" />
+                    ixx="0.01" ixy="0.0"  ixz="0.0"
+                    iyy="0.01" iyz="0.0"
+                    izz="0.01" />
             </inertial>
         </link>
         <gazebo reference="tibia_${side}${position}">
