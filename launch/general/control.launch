@@ -5,6 +5,8 @@
     <!-- Load joint controller configuration file -->
     <rosparam file="$(find hexpet)/config/phantomX_control.yaml" command="load"/>
 
+    <param name="robot_description" command="$(find xacro)/xacro --inorder  $(find hexpet)/urdf/hexpet.xacro"  />
+
     <!-- Load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
         output="screen" ns="/hexpet"
