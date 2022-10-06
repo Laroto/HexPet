@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace"      default="hexpet" /> <!-- model name -->
+
+  <arg name="hexapod_links"    default="$(find hexpet)/urdf/hexpet.xacro" /> <!-- model links and joints  -->
+
+  <arg name="x"     default="0.0" /> <!-- meters -->
+  <arg name="y"     default="0.0" /> <!-- meters -->
+  <arg name="z"     default="1.0" /> <!-- meters -->
+  <arg name="roll"  default="0.0" /> <!-- radians -->
+  <arg name="pitch" default="0.0" /> <!-- radians -->
+  <arg name="yaw"   default="0.0" /> <!-- radians -->
+
+  <group ns="$(arg namespace)">
+    <param name="tf_prefix" value="$(arg namespace)" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find hexpet)/urdf/hexpet.xacro'" />
+    <!-- Spawn robot in gazebo   -->
+    <node name="spawn_model_$(arg namespace)" pkg="gazebo_ros" type="spawn_model"
+          args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -urdf -param robot_description -model $(arg namespace)"/>
+
+    <!-- Spawn robot in gazebo   -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+    <node pkg="utils_sim" type="msg2tf" name="msg2tf_$(arg namespace)">
+      <param name="topic_odom_sub" value="/$(arg namespace)/odom"/>
+      <param name="debug" value="false"/>
+    </node>
+  </group>
+</launch>

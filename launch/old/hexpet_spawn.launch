@@ -7,14 +7,16 @@
     <arg name="gui" default="true" />
     <arg name="pause" default="true" />
     <arg name="world" default="$(find hexpet)/world/empty_world.world" />
-    
-    <arg name="x" default="0"/>
-    <arg name="y" default="0"/>
-    <arg name="z" default="0.5"/>
-    
-    
+
+    <arg name="x"     default="0.0" /> <!-- meters -->
+    <arg name="y"     default="0.0" /> <!-- meters -->
+    <arg name="z"     default="0.5" /> <!-- meters -->
+    <arg name="roll"  default="0.0" /> <!-- radians -->
+    <arg name="pitch" default="0.0" /> <!-- radians -->
+    <arg name="yaw"   default="0.0" /> <!-- radians -->
+        
     <!-- include gazebo_ros launcher -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <include file="$(find gazebo_ros)/launch/old/empty_world.launch">
         <arg name="world_name" value="$(arg world)" />
         <arg name="debug" value="$(arg debug)" />
         <arg name="gui" value="$(arg gui)" />

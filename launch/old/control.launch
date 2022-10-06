@@ -35,8 +35,5 @@
         respawn="false" output="screen">
         <remap from="/joint_states" to="/hexpet/joint_states"/>
     </node>
-    
-    <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
-        <param name="use_gui" value="True"/>  -->
 
 </launch>

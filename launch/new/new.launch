@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="hexapod" default="$(find hexpet)/urdf/hexpet.xacro" />
+
+  <arg name="world" default="lake.world" />
+
+  <param name="use_sim_time" value="true" />
+  <include file="$(find hexpet)/launch/old/me_world.launch">
+    <arg name="world_name" value="$(find hexpet)/worlds/empty_world.world"/><!-- mapping_short  -->
+
+    <arg name="max_update_rate" value="50.0"/>
+    <arg name="time_step" value="0.02"/>
+    <arg name="paused" value="true"/>
+
+    <arg name="verbose" value="true"/>
+    <arg name="use_sim_time" value="true" />
+  </include>
+
+  <include file="$(find hexpet)/launch/new/spawn_urdf_model.launch">
+    <arg name="namespace" value="hexpet"/>
+
+    <arg name="hexapod_links"    value="$(find hexpet)/urdf/hexpet.xacro" /> <!-- model links and joints  -->
+
+    <arg name="x"     value="0.0" /> <!-- meters -->
+    <arg name="y"     value="0.0" /> <!-- meters -->
+    <arg name="z"     value="0.75" /> <!-- meters -->
+    <arg name="roll"  value="0.0" /> <!-- radians -->
+    <arg name="pitch" value="0.0" /> <!-- radians -->
+    <arg name="yaw"   value="0.0" /> <!-- radians -->
+  </include>
+
+  
+  <!-- <node pkg="utils_sim" type="gazebo2odom" name="gazebo2odom"/> -->
+
+  <!--<node pkg="sim_object_interpreter" type="sim_object_interpreter" name="sim_object_interpreter"/>-->
+
+  <include file="$(find hexpet)/launch/old/control.launch"/>
+	
+</launch>
