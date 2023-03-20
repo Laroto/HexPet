@@ -5,18 +5,26 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   sensor_msgs
+  message_generation
 )
+
+## Specify additional locations of header files
+## Your package locations should be listed before other locations
+include_directories(
+    include
+    ${catkin_INCLUDE_DIRS}
+)
+
 
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  joint_cmd_msg.msg
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -26,7 +34,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -38,26 +49,24 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  INCLUDE_DIRS include
   CATKIN_DEPENDS 
   roscpp 
   sensor_msgs
-  std_msgs
+  std_msgs  
+  message_generation
 )
 
 ###########
 ## Build ##
 ###########
 
-## Specify additional locations of header files
-## Your package locations should be listed before other locations
-include_directories(
- include
-  ${catkin_INCLUDE_DIRS}
+# Declare a C++ library
+add_library(part src/part.cpp
 )
 
-## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/ex1.cpp
+# target_include_directories( part PUBLIC
+#   libs
 # )
 
 ## Declare a C++ executable
@@ -65,6 +74,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(teste_joints src/teste_joints.cpp)
 add_executable(single_joint src/single_joint.cpp)
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -81,10 +91,13 @@ add_dependencies(single_joint ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPOR
 
 # Specify libraries to link a library or executable target against
 target_link_libraries(teste_joints
-  ${catkin_LIBRARIES}
+${catkin_LIBRARIES}
+part
 )
+
 target_link_libraries(single_joint
 ${catkin_LIBRARIES}
+
 )
 
 #############

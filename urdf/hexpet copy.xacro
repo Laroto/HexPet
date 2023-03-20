@@ -51,8 +51,7 @@
     <!-- Joint properties -->
 	<xacro:property name="joint_lower_limit" value="-${1.57}" />
 	<xacro:property name="joint_upper_limit" value="${1.57}" />
-	<!-- <xacro:property name="joint_effort" value="1.667" /> -->
-    <xacro:property name="joint_effort" value="100" />
+	<xacro:property name="joint_effort" value="1.667" />
 	<xacro:property name="joint_velocity" value="5.24" />
 
 	<!-- Leg macro -->

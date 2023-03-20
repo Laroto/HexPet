@@ -9,7 +9,7 @@
 
     <!-- Load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-        output="screen" ns="/hexpet"
+        output="screen" ns="hexpet"
         args="
         coxa_joint_LB_position_controller
         coxa_joint_RB_position_controller

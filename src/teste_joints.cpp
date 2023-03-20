@@ -2,6 +2,8 @@
 
 #include <sensor_msgs/JointState.h>
 
+#include "part.h"
+
 sensor_msgs::JointState init_msg()
 {
     sensor_msgs::JointState msg;
@@ -42,6 +44,8 @@ int main(int argc, char** argv)
     sensor_msgs::JointState msg = init_msg();
 
     bool flag = true;
+
+    bro();
 
     ros::Rate loop_rate(0.2);
     while (ros::ok())

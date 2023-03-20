@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-    <include file="$(find hexpet)/launch/old/hexpet_spawn.launch"/>
+    <include file="$(find hexpet)/launch/testing/hexpet_spawn.launch"/>
 
-    <include file="$(find hexpet)/launch/old/control.launch"/>
+    <!-- <include file="$(find hexpet)/launch/general/control.launch"/> -->
 
 </launch>
