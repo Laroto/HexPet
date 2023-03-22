@@ -74,6 +74,8 @@ add_library(part src/part.cpp
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(teste_joints src/teste_joints.cpp)
 add_executable(single_joint src/single_joint.cpp)
+add_executable(interpreter src/interpreter.cpp)
+add_executable(teste_all src/teste_all.cpp)
 
 
 ## Rename C++ executable without prefix
@@ -86,6 +88,8 @@ add_executable(single_joint src/single_joint.cpp)
 ## same as for the library above
 add_dependencies(teste_joints ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(single_joint ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(interpreter ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(teste_all ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 
@@ -97,7 +101,14 @@ part
 
 target_link_libraries(single_joint
 ${catkin_LIBRARIES}
+)
 
+target_link_libraries(interpreter
+${catkin_LIBRARIES}
+)
+
+target_link_libraries(teste_all
+${catkin_LIBRARIES}
 )
 
 #############

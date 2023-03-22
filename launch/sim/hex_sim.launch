@@ -23,7 +23,7 @@
 
     <arg name="x"     value="0.0" /> <!-- meters -->
     <arg name="y"     value="0.0" /> <!-- meters -->
-    <arg name="z"     value="0.75" /> <!-- meters -->
+    <arg name="z"     value="1.5" /> <!-- meters -->
     <arg name="roll"  value="0.0" /> <!-- radians -->
     <arg name="pitch" value="0.0" /> <!-- radians -->
     <arg name="yaw"   value="0.0" /> <!-- radians -->

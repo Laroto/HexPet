@@ -2,96 +2,96 @@ hexpet:
 # Publish all joint states -----------------------------------
     joint_state_controller:
         type: joint_state_controller/JointStateController
-        publish_rate: 50
+        publish_rate: 10
 
 # Position Controllers ---------------------------------------
 
     coxa_joint_RB_position_controller:
         type: effort_controllers/JointPositionController
         joint: coxa_joint_RB
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     coxa_joint_RM_position_controller:
         type: effort_controllers/JointPositionController
         joint: coxa_joint_RM
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     coxa_joint_RF_position_controller:
         type: effort_controllers/JointPositionController
         joint: coxa_joint_RF
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     coxa_joint_LB_position_controller:
         type: effort_controllers/JointPositionController
         joint: coxa_joint_LB
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     coxa_joint_LM_position_controller:
         type: effort_controllers/JointPositionController
         joint: coxa_joint_LM
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     coxa_joint_LF_position_controller:
         type: effort_controllers/JointPositionController
         joint: coxa_joint_LF
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     femur_joint_RB_position_controller:
         type: effort_controllers/JointPositionController
         joint: femur_joint_RB
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     femur_joint_RM_position_controller:
         type: effort_controllers/JointPositionController
         joint: femur_joint_RM
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     femur_joint_RF_position_controller:
         type: effort_controllers/JointPositionController
         joint: femur_joint_RF
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     femur_joint_LB_position_controller:
         type: effort_controllers/JointPositionController
         joint: femur_joint_LB
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     femur_joint_LM_position_controller:
         type: effort_controllers/JointPositionController
         joint: femur_joint_LM
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     femur_joint_LF_position_controller:
         type: effort_controllers/JointPositionController
         joint: femur_joint_LF
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     tibia_joint_RB_position_controller:
         type: effort_controllers/JointPositionController
         joint: tibia_joint_RB
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     tibia_joint_RM_position_controller:
         type: effort_controllers/JointPositionController
         joint: tibia_joint_RM
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     tibia_joint_RF_position_controller:
         type: effort_controllers/JointPositionController
         joint: tibia_joint_RF
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     tibia_joint_LB_position_controller:
         type: effort_controllers/JointPositionController
         joint: tibia_joint_LB
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     tibia_joint_LM_position_controller:
         type: effort_controllers/JointPositionController
         joint: tibia_joint_LM
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}
 
     tibia_joint_LF_position_controller:
         type: effort_controllers/JointPositionController
         joint: tibia_joint_LF
-        pid: {p: 100.0, i: 0.0, d: 0.0}
+        pid: {p: 10.0, i: 0.0, d: 0.0}

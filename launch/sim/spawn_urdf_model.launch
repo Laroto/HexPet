@@ -6,7 +6,7 @@
 
   <arg name="x"     default="0.0" /> <!-- meters -->
   <arg name="y"     default="0.0" /> <!-- meters -->
-  <arg name="z"     default="1.0" /> <!-- meters -->
+  <arg name="z"     default="0.075" /> <!-- meters -->
   <arg name="roll"  default="0.0" /> <!-- radians -->
   <arg name="pitch" default="0.0" /> <!-- radians -->
   <arg name="yaw"   default="0.0" /> <!-- radians -->
