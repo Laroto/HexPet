@@ -1,4 +1,6 @@
-# HexPet
+# [WIP] HexPet
+
+ROS simulation of an hexapod robot in gazebo enviroment. Meshes used from Phamtom X hexapod.
 
 Use roslaunch hexpet hexpet_sim.launch
 
